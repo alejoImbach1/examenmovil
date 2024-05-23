@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() ,OnClickListener{
         binding.buttonKilometros.setOnClickListener(this)
         binding.buttonCentimetros.setOnClickListener(this)
         binding.buttonMilimetros.setOnClickListener(this)
+        binding.buttonDecametros.setOnClickListener(this)
+
     }
 
     override fun onClick(v: View?) {
@@ -26,7 +28,7 @@ class MainActivity : AppCompatActivity() ,OnClickListener{
         if (input !==null){
             when(v){
             binding.buttonKilometros->
-                binding.resultado.text = default + (input/1000).toString() + " km"
+                binding.resultado.text = default + (input/1000).toString() + " Km"
 
             binding.buttonCentimetros->
                 binding.resultado.text = default + (input*100).toString() + " cm"
@@ -34,7 +36,10 @@ class MainActivity : AppCompatActivity() ,OnClickListener{
             binding.buttonMilimetros->
                 binding.resultado.text = default + (input*1000).toString() + "mm"
 
-        }
+            binding.buttonDecametros->
+                binding.resultado.text = default + (input/10).toString() + "Dm"
+
+            }
         }
     }
 }
